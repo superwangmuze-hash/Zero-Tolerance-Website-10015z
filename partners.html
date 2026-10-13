@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#090a0b">
+		<meta
+			name="description"
+			content="Learn how you can support Zero Tolerance Robotics through sponsorship, materials, mentorship, and community support.">
+			<title>Zero Tolerance Robotics — Get Involved</title>
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet">
+				<style>
+				:root {
+					--bg:#090a0b;
+					--gold:#d5ad63;
+					--white:#f4f3ef;
+					--muted:#999a9b;
+					--line:rgba(255,255,255,.12);
+					--display:'Barlow Condensed',Impact,sans-serif;
+					--body:'DM Sans',sans-serif;
+				}
+				* {
+					box-sizing:border-box;
+				}
+				body {
+					margin:0;
+					background:var(--bg);
+					color:var(--white);
+					font-family:var(--body);
+					-webkit-font-smoothing:antialiased;
+				}
+				a {
+					color:inherit;
+					text-decoration:none;
+				}
+				.wrap {
+					width:min(1240px,calc(100% - 64px));
+					margin:auto;
+				}
+				header {
+					height:82px;
+					position:absolute;
+					inset:0 0 auto;
+					z-index:5;
+					border-bottom:1px solid rgba(255,255,255,.1);
+				}
+				.nav {
+					height:100%;
+					display:flex;
+					align-items:center;
+					justify-content:space-between;
+				}
+				.brand {
+					display:flex;
+					align-items:center;
+					gap:12px;
+					font-size:12px;
+					font-weight:700;
+					letter-spacing:.14em;
+				}
+				.mark {
+					width:34px;
+					height:34px;
+					border:1px solid var(--gold);
+					display:grid;
+					place-items:center;
+					color:var(--gold);
+					font:800 19px var(--display);
+					transform:skew(-8deg);
+				}
+				.links {
+					display:flex;
+					align-items:center;
+					gap:28px;
+				}
+				.links a {
+					color:#d0d0ce;
+					font-size:11px;
+					font-weight:600;
+					letter-spacing:.1em;
+					text-transform:uppercase;
+				}
+				.links a:hover,.links a[aria-current=page] {
+					color:var(--gold);
+				}
+				.nav-cta {
+					border:1px solid rgba(213,173,99,.65);
+					padding:12px 15px;
+					color:var(--gold)!important;
+				}
+				.eyebrow {
+					display:flex;
+					align-items:center;
+					gap:12px;
+					color:var(--gold);
+					font-size:11px;
+					font-weight:700;
+					letter-spacing:.2em;
+					text-transform:uppercase;
+				}
+				.eyebrow:before {
+					content:'';
+					width:28px;
+					height:1px;
+					background:var(--gold);
+				}
+				.hero {
+					min-height:620px;
+					padding:160px 0 75px;
+					display:flex;
+					align-items:center;
+					background:linear-gradient(90deg,rgba(5,6,7,.94),rgba(5,6,7,.48)),linear-gradient(0deg,
+						#090a0b,transparent
+				46%),linear-gradient(135deg,rgba(213,173,99,
+						.12),rgba(255,255,255,.02));
+				}
+				.hero h1 {
+					font:900 clamp(72px,11.5vw,140px)/.82 var(--display);
+					text-transform:uppercase;
+					margin:20px 0 26px;
+				}
+				.hero h1 span {
+					display:block;
+					color:var(--gold);
+				}
+				.hero p {
+					max-width:510px;
+					color:#c6c5c1;
+					font-size:15px;
+					line-height:1.8;
+				}
+				.section {
+					padding:70px 0 105px;
+				}
+				.section-head {
+					display:flex;
+					align-items:end;
+					justify-content:space-between;
+					gap:30px;
+					margin-bottom:45px;
+				}
+				.title {
+					font:800 clamp(48px,7vw,82px)/.9 var(--display);
+					text-transform:uppercase;
+					margin:14px 0 0;
+				}
+				.intro {
+					max-width:390px;
+					color:var(--muted);
+					font-size:13px;
+					line-height:1.8;
+				}
+				.levels {
+					display:grid;
+					grid-template-columns:repeat(3,1fr);
+					border-top:1px solid var(--line);
+					border-bottom:1px solid var(--line);
+				}
+				.level {
+					padding:30px 26px 34px 0;
+				}
+				.level+.level {
+					padding-left:26px;
+					border-left:1px solid var(--line);
+				}
+				.level small {
+					color:var(--gold);
+					font-size:10px;
+					letter-spacing:.16em;
+				}
+				.level h2 {
+					font:700 33px var(--display);
+					text-transform:uppercase;
+					margin:14px 0 8px;
+				}
+				.level p {
+					color:var(--muted);
+					font-size:12px;
+					line-height:1.8;
+					margin:0 0 20px;
+				}
+				.level ul {
+					list-style:none;
+					padding:0;
+					margin:0;
+					color:#d1d0cc;
+					font-size:11px;
+					line-height:2;
+				}
+				.level li:before {
+					content:'+';
+					color:var(--gold);
+					margin-right:9px;
+				}
+				.contact {
+					margin-top:70px;
+					padding:38px 0;
+					border-top:1px solid var(--line);
+					border-bottom:1px solid var(--line);
+					display:flex;
+					align-items:center;
+					justify-content:space-between;
+					gap:30px;
+				}
+				.contact p {
+					max-width:550px;
+					color:var(--muted);
+					font-size:13px;
+					line-height:1.8;
+				}
+				.button {
+					display:inline-flex;
+					align-items:center;
+					min-height:48px;
+					padding:0 20px;
+					background:var(--gold);
+					color:#111;
+					font-size:11px;
+					font-weight:700;
+					letter-spacing:.1em;
+					text-transform:uppercase;
+					white-space:nowrap;
+				}
+				.button:hover {
+					background:#e8c47e;
+				}
+				footer {
+					border-top:1px solid var(--line);
+					padding:24px 0;
+					color:#777;
+					font-size:10px;
+					letter-spacing:.08em;
+				}
+				.footer-row {
+					display:flex;
+					justify-content:space-between;
+					gap:20px;
+				}
+				.footer-links {
+					display:flex;
+					gap:20px;
+				}
+				.footer-links a:hover {
+					color:var(--gold);
+				}
+				@media(max-width:700px) {
+					.wrap {
+						width:min(100% - 36px,600px);
+					}
+					header {
+						height:70px;
+					}
+					.links {
+						gap:12px;
+					}
+					.links a {
+						font-size:9px;
+					}
+					.hero {
+						min-height:560px;
+					}
+					.section-head {
+						align-items:start;
+						flex-direction:column;
+					}
+					.levels {
+						grid-template-columns:1fr;
+					}
+					.level,.level+.level {
+						padding:24px 0;
+						border-left:0;
+						border-bottom:1px solid var(--line);
+					}
+					.level:last-child {
+						border-bottom:0;
+					}
+					.contact {
+						align-items:start;
+						flex-direction:column;
+					}
+					.footer-row {
+						flex-direction:column;
+					}
+				}
+				@media(max-width:430px) {
+					.wrap {
+						width:calc(100% - 24px);
+					}
+					.brand {
+						font-size:9px;
+						gap:7px;
+					}
+					.mark {
+						width:28px;
+						height:28px;
+					}
+					.links {
+						gap:7px;
+					}
+					.links a {
+						font-size:7px;
+						letter-spacing:.05em;
+					}
+					.nav-cta {
+						padding:8px 5px;
+					}
+					.hero h1 {
+						font-size:clamp(62px,15vw,82px);
+					}
+				}
+</style>
+				<style>
+				.section {
+					padding:58px 0 84px;
+				}
+				.section-head {
+					margin-bottom:30px;
+				}
+				.intro {
+					max-width:360px;
+				}
+				.season-levels {
+					grid-template-columns:repeat(4,1fr);
+					border-bottom:0;
+				}
+				.level {
+					padding:22px 18px 24px 0;
+					min-height:170px;
+				}
+				.season-levels .level strong {
+					display:block;
+					margin:0 0 12px;
+					color:var(--gold);
+					font-size:18px;
+				}
+				.level-trigger {
+					display:block;
+					width:100%;
+					height:100%;
+					padding:0;
+					border:0;
+					background:transparent;
+					color:inherit;
+					font:inherit;
+					text-align:left;
+					cursor:pointer;
+				}
+				.level-trigger:hover .level-details-link,
+				.level-trigger:focus-visible .level-details-link {
+					color:var(--white);
+				}
+				.level-trigger:focus-visible {
+					outline:2px solid var(--gold);
+					outline-offset:6px;
+				}
+				.level-details-link {
+					display:inline-block;
+					margin-top:18px;
+					color:var(--gold);
+					font-size:10px;
+					font-weight:700;
+					letter-spacing:.12em;
+					text-transform:uppercase;
+				}
+				.level-features-source {
+					display:none;
+				}
+				.sponsor-dialog {
+					width:min(560px,calc(100% - 32px));
+					max-height:min(80vh,720px);
+					padding:38px;
+					background:#111214;
+					color:var(--white);
+					border:1px solid rgba(213,173,99,.5);
+				}
+				.sponsor-dialog::backdrop {
+					background:rgba(0,0,0,.78);
+					backdrop-filter:blur(4px);
+				}
+				.sponsor-dialog-header {
+					display:flex;
+					align-items:flex-start;
+					justify-content:space-between;
+					gap:24px;
+				}
+				.sponsor-dialog-kicker {
+					color:var(--gold);
+					font-size:10px;
+					font-weight:700;
+					letter-spacing:.16em;
+					text-transform:uppercase;
+				}
+				.sponsor-dialog h2 {
+					margin:12px 0 8px;
+					font:800 48px/.95 var(--display);
+					text-transform:uppercase;
+				}
+				.sponsor-dialog-amount {
+					margin:0;
+					color:var(--gold);
+					font-size:18px;
+					font-weight:700;
+				}
+				.sponsor-dialog-close {
+					width:36px;
+					height:36px;
+					flex:0 0 36px;
+					border:1px solid var(--line);
+					background:transparent;
+					color:var(--white);
+					font-size:21px;
+					cursor:pointer;
+				}
+				.sponsor-dialog-close:hover {
+					border-color:var(--gold);
+					color:var(--gold);
+				}
+				.sponsor-dialog h3 {
+					margin:30px 0 12px;
+					font:700 24px var(--display);
+					text-transform:uppercase;
+				}
+				.sponsor-dialog-features {
+					margin:0;
+					padding:0;
+					list-style:none;
+					border-top:1px solid var(--line);
+				}
+				.sponsor-dialog-features li {
+					padding:13px 0;
+					border-bottom:1px solid var(--line);
+					color:#e1e0dc;
+					font-size:12px;
+					line-height:1.6;
+				}
+				.sponsor-dialog-features li::before {
+					content:'+';
+					margin-right:12px;
+					color:var(--gold);
+				}
+				.level h2,.level h3 {
+					font:700 32px var(--display);
+					text-transform:uppercase;
+					margin:12px 0 7px;
+				}
+				.level p {
+					color:var(--muted);
+					font-size:12px;
+					font-weight:400;
+					line-height:1.8;
+					margin:0;
+				}
+				@media(max-width:900px) {
+					.season-levels {
+						grid-template-columns:repeat(2,1fr);
+					}
+				}
+				@media(max-width:700px) {
+					.season-levels {
+						grid-template-columns:1fr;
+					}
+					.level {
+						min-height:0;
+					}
+				}
+				@media(max-width:520px) {
+					.sponsor-dialog {
+						padding:25px;
+					}
+					.sponsor-dialog h2 {
+						font-size:40px;
+					}
+				}
+</style>
+				<style>
+				.hero {
+					min-height:0;
+					padding:122px 0 24px;
+					background-position:center 42%;
+				}
+				.hero h1 {
+					font-size:clamp(52px,7vw,84px);
+					line-height:.9;
+					margin:12px 0;
+				}
+				.hero p {
+					max-width:560px;
+					font-size:13px;
+					line-height:1.6;
+					margin:0;
+				}
+				.section {
+					padding:24px 0 64px;
+				}
+				.section-head {
+					margin-bottom:18px;
+				}
+				.section-head .intro {
+					display:none;
+				}
+				.title {
+					font-size:clamp(42px,6vw,64px);
+				}
+				@media(max-width:700px) {
+					.hero {
+						padding:110px 0 20px;
+					}
+					.section {
+						padding-top:18px;
+					}
+				}
+</style>
+			</head>
+			<body>
+			<header>
+			<nav class="nav wrap" aria-label="Main navigation">
+			<a class="brand" href="Index.html">
+			<span class="mark">ZT</span>
+			<span>ZERO TOLERANCE<br>
+			<small style="font-size:8px;color:#999;letter-spacing:.2em">VEX ROBOTICS</small>
+			</span>
+			</a>
+			<div
+			class="links">
+			<a
+			href="Index.html#about">About</a>
+			<a
+			href="robot.html">Robot</a>
+			<a
+			href="team.html">Team</a>
+			<a
+			class="nav-cta"
+			href="partners.html"
+			aria-current="page">Get
+			involved</a>
+			</div>
+			</nav>
+			</header>
+			<main>
+			<section class="hero">
+			<div class="wrap">
+			<div class="eyebrow">Build a stronger future</div>
+			<h1>SUPPORT<br>
+			<span>STUDENT ROBOTICS</span>
+			</h1>
+			<p>Partnerships help students explore engineering,
+				programming, and problem-solving through hands-on
+				robotics.</p>
+			</div>
+			</section>
+			<section class="section" id="season-sponsors">
+			<div class="wrap">
+			<div class="section-head">
+				<div>
+					<div class="eyebrow">Sponsorship levels</div>
+					<h2 class="title">SUPPORT<br>OUR TEAM</h2>
+				</div>
+				<p class="intro">
+					Choose the sponsorship level that works best for you.
+					Every contribution helps support our robotics season.
+				</p>
+			</div>
+			<div class="levels season-levels">
+				<article class="level">
+					<button class="level-trigger" type="button">
+						<h2>Platinum Sponsor</h2>
+						<strong>$3,500+</strong>
+						<p>Provide leading support for the team's season and competition goals.</p>
+						<span class="level-details-link">View features ↗</span>
+					</button>
+					<ul class="level-features-source">
+						<li>Prominent sponsor recognition on team materials.</li>
+						<li>Logo placement on the team website and selected materials.</li>
+						<li>Season updates and invitations to team events.</li>
+					</ul>
+				</article>
+				<article class="level">
+					<button class="level-trigger" type="button">
+						<h2>Gold Sponsor</h2>
+						<strong>$2,000–$3,499</strong>
+						<p>Help fund team activities, robot development, and event participation.</p>
+						<span class="level-details-link">View features ↗</span>
+					</button>
+					<ul class="level-features-source">
+						<li>Sponsor recognition on team materials.</li>
+						<li>Logo placement on selected team materials.</li>
+						<li>Season progress updates.</li>
+					</ul>
+				</article>
+				<article class="level">
+					<button class="level-trigger" type="button">
+						<h2>Silver Sponsor</h2>
+						<strong>$500–$1,999</strong>
+						<p>Contribute to the tools, parts, and materials that bring ideas to life.</p>
+						<span class="level-details-link">View features ↗</span>
+					</button>
+					<ul class="level-features-source">
+						<li>Name listed with the team's sponsors.</li>
+						<li>Recognition in a team update.</li>
+						<li>A thank-you from the team.</li>
+					</ul>
+				</article>
+				<article class="level">
+					<button class="level-trigger" type="button">
+						<h2>Supporter</h2>
+						<strong>Any amount</strong>
+						<p>Show your support and help students keep learning through robotics.</p>
+						<span class="level-details-link">View features ↗</span>
+					</button>
+					<ul class="level-features-source">
+						<li>Name listed with team supporters, if desired.</li>
+						<li>A thank-you from the team.</li>
+						<li>Updates on the team's robotics season.</li>
+					</ul>
+				</article>
+			</div>
+			</div>
+			</section>
+			</main>
+			<footer>
+			<div class="wrap footer-row">
+			<span>© 2026 ZERO TOLERANCE ROBOTICS. BUILDING, LEARNING,
+				GROWING.</span>
+			<div
+			class="footer-links">
+			<a
+			href="Index.html">Home</a>
+			<a
+			href="robot.html">Robot</a>
+			<a
+			href="team.html">Team</a>
+			</div>
+			</div>
+			</footer>
+			<dialog
+				class="sponsor-dialog"
+				aria-labelledby="sponsorDialogTitle">
+				<div class="sponsor-dialog-header">
+					<div>
+						<div class="sponsor-dialog-kicker">Sponsorship level</div>
+						<h2 id="sponsorDialogTitle"></h2>
+						<p class="sponsor-dialog-amount" id="sponsorDialogAmount"></p>
+					</div>
+					<button
+						class="sponsor-dialog-close"
+						type="button"
+						aria-label="Close sponsor features">×</button>
+				</div>
+				<h3>Features</h3>
+				<ul class="sponsor-dialog-features" id="sponsorDialogFeatures"></ul>
+			</dialog>
+			<script>
+				const sponsorDialog = document.querySelector('.sponsor-dialog');
+				const sponsorDialogTitle = document.querySelector('#sponsorDialogTitle');
+				const sponsorDialogAmount = document.querySelector('#sponsorDialogAmount');
+				const sponsorDialogFeatures = document.querySelector('#sponsorDialogFeatures');
+
+				document.querySelectorAll('.level').forEach(level => {
+					level.querySelector('.level-trigger').addEventListener('click', () => {
+						sponsorDialogTitle.textContent = level.querySelector('h2').textContent;
+						sponsorDialogAmount.textContent = level.querySelector('strong').textContent;
+						sponsorDialogFeatures.replaceChildren(
+							...Array.from(level.querySelectorAll('.level-features-source li'), item => {
+								const feature = document.createElement('li');
+								feature.textContent = item.textContent;
+								return feature;
+							})
+						);
+						sponsorDialog.showModal();
+					});
+				});
+
+				document.querySelector('.sponsor-dialog-close').addEventListener('click', () => {
+					sponsorDialog.close();
+				});
+
+				sponsorDialog.addEventListener('click', event => {
+					if (event.target === sponsorDialog) sponsorDialog.close();
+				});
+			</script>
+			</body>
+		</html>

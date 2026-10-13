@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#090a0b">
+		<meta
+			name="description"
+			content="Learn how Zero Tolerance Robotics approaches robot design, programming, and testing as a VEX Robotics team.">
+			<title>Zero Tolerance Robotics — Our Robot</title>
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet">
+				<style>
+				:root {
+					--bg:#090a0b;
+					--panel:#111214;
+					--gold:#d5ad63;
+					--white:#f4f3ef;
+					--muted:#999a9b;
+					--line:rgba(255,255,255,.12);
+					--display:'Barlow Condensed',Impact,sans-serif;
+					--body:'DM Sans',sans-serif;
+				}
+				* {
+					box-sizing:border-box;
+				}
+				body {
+					margin:0;
+					background:var(--bg);
+					color:var(--white);
+					font-family:var(--body);
+					-webkit-font-smoothing:antialiased;
+				}
+				a {
+					color:inherit;
+					text-decoration:none;
+				}
+				.wrap {
+					width:min(1240px,calc(100% - 64px));
+					margin:auto;
+				}
+				header {
+					height:82px;
+					position:absolute;
+					inset:0 0 auto;
+					z-index:5;
+					border-bottom:1px solid rgba(255,255,255,.1);
+				}
+				.nav {
+					height:100%;
+					display:flex;
+					align-items:center;
+					justify-content:space-between;
+				}
+				.brand {
+					display:flex;
+					align-items:center;
+					gap:12px;
+					font-size:12px;
+					font-weight:700;
+					letter-spacing:.14em;
+				}
+				.mark {
+					width:34px;
+					height:34px;
+					border:1px solid var(--gold);
+					display:grid;
+					place-items:center;
+					color:var(--gold);
+					font:800 19px var(--display);
+					transform:skew(-8deg);
+				}
+				.links {
+					display:flex;
+					align-items:center;
+					gap:28px;
+				}
+				.links a {
+					color:#d0d0ce;
+					font-size:11px;
+					font-weight:600;
+					letter-spacing:.1em;
+					text-transform:uppercase;
+				}
+				.links a:hover,.links a[aria-current=page] {
+					color:var(--gold);
+				}
+				.nav-cta {
+					border:1px solid rgba(213,173,99,.65);
+					padding:12px 15px;
+					color:var(--gold)!important;
+				}
+				.eyebrow {
+					display:flex;
+					align-items:center;
+					gap:12px;
+					color:var(--gold);
+					font-size:11px;
+					font-weight:700;
+					letter-spacing:.2em;
+					text-transform:uppercase;
+				}
+				.eyebrow:before {
+					content:'';
+					width:28px;
+					height:1px;
+					background:var(--gold);
+				}
+				.hero {
+					min-height:640px;
+					padding:150px 0 80px;
+					display:flex;
+					align-items:center;
+					background:linear-gradient(90deg,rgba(5,6,7,.94),rgba(5,6,7,.44)),linear-gradient(0deg,
+						#090a0b 0%,transparent
+				40%),linear-gradient(135deg,rgba(213,173,
+						99,.12),rgba(255,255,255,.02));
+				}
+				.hero h1 {
+					font:900 clamp(76px,12vw,150px)/.82 var(--display);
+					text-transform:uppercase;
+					margin:20px 0 25px;
+				}
+				.hero h1 span {
+					display:block;
+					color:var(--gold);
+				}
+				.hero p {
+					max-width:510px;
+					color:#c6c5c1;
+					font-size:15px;
+					line-height:1.8;
+				}
+				.content {
+					padding:70px 0 110px;
+				}
+				.section-head {
+					display:flex;
+					align-items:end;
+					justify-content:space-between;
+					gap:30px;
+					margin-bottom:45px;
+				}
+				.title {
+					font:800 clamp(48px,7vw,82px)/.9 var(--display);
+					text-transform:uppercase;
+					margin:14px 0 0;
+				}
+				.intro {
+					max-width:390px;
+					color:var(--muted);
+					font-size:13px;
+					line-height:1.8;
+				}
+				.systems {
+					display:grid;
+					grid-template-columns:repeat(3,1fr);
+					border-top:1px solid var(--line);
+					border-bottom:1px solid var(--line);
+				}
+				.system {
+					padding:30px 25px 34px 0;
+				}
+				.system+.system {
+					padding-left:25px;
+					border-left:1px solid var(--line);
+				}
+				.system small {
+					color:var(--gold);
+					font-size:10px;
+					letter-spacing:.15em;
+				}
+				.system h2 {
+					font:700 31px var(--display);
+					text-transform:uppercase;
+					margin:13px 0 8px;
+				}
+				.system p {
+					color:var(--muted);
+					font-size:12px;
+					line-height:1.8;
+					margin:0;
+				}
+				.specs {
+					margin-top:65px;
+					display:grid;
+					grid-template-columns:1fr 1fr;
+					gap:9%;
+					align-items:center;
+				}
+				.spec-visual {
+					width:100%;
+					aspect-ratio:1.3;
+					background:linear-gradient(180deg,rgba(213,173,99,.12),rgba(255,255,255,
+						.02));
+					border:1px solid rgba(213,173,99,.35);
+					display:grid;
+					place-items:center;
+					color:var(--gold);
+					font:800 clamp(44px,6vw,82px)/1 var(--display);
+					letter-spacing:.12em;
+				}
+				.spec-list {
+					border-top:1px solid var(--line);
+				}
+				.spec {
+					display:flex;
+					justify-content:space-between;
+					gap:20px;
+					padding:17px 0;
+					border-bottom:1px solid var(--line);
+					font-size:12px;
+				}
+				.spec span:first-child {
+					color:var(--muted);
+				}
+				.spec span:last-child {
+					color:var(--white);
+					text-align:right;
+				}
+				footer {
+					border-top:1px solid var(--line);
+					padding:24px 0;
+					color:#777;
+					font-size:10px;
+					letter-spacing:.08em;
+				}
+				.footer-row {
+					display:flex;
+					justify-content:space-between;
+					gap:20px;
+				}
+				.footer-links {
+					display:flex;
+					gap:20px;
+				}
+				.footer-links a:hover {
+					color:var(--gold);
+				}
+				@media(max-width:700px) {
+					.wrap {
+						width:min(100% - 36px,600px);
+					}
+					header {
+						height:70px;
+					}
+					.links {
+						gap:12px;
+					}
+					.links a {
+						font-size:9px;
+					}
+					.hero {
+						min-height:570px;
+					}
+					.systems {
+						grid-template-columns:1fr;
+					}
+					.system,.system+.system {
+						padding:22px 0;
+						border-left:0;
+						border-bottom:1px solid var(--line);
+					}
+					.system:last-child {
+						border-bottom:0;
+					}
+					.section-head {
+						align-items:start;
+						flex-direction:column;
+					}
+					.specs {
+						grid-template-columns:1fr;
+						gap:30px;
+					}
+					.footer-row {
+						flex-direction:column;
+					}
+				}
+				@media(max-width:430px) {
+					.wrap {
+						width:calc(100% - 24px);
+					}
+					.brand {
+						font-size:9px;
+						gap:7px;
+					}
+					.mark {
+						width:28px;
+						height:28px;
+					}
+					.links {
+						gap:7px;
+					}
+					.links a {
+						font-size:7px;
+						letter-spacing:.05em;
+					}
+					.nav-cta {
+						padding:8px 5px;
+					}
+					.hero h1 {
+						font-size:clamp(64px,16vw,86px);
+					}
+				}
+</style>
+			</head>
+			<body>
+			<header>
+			<nav class="nav wrap" aria-label="Main navigation">
+			<a class="brand" href="Index.html">
+			<span class="mark">ZT</span>
+			<span>ZERO TOLERANCE<br>
+			<small style="font-size:8px;color:#999;letter-spacing:.2em">VEX ROBOTICS</small>
+			</span>
+			</a>
+			<div
+			class="links">
+			<a
+			href="Index.html#about">About</a>
+			<a
+			href="robot.html"
+			aria-current="page">Robot</a>
+			<a
+			href="team.html">Team</a>
+			<a
+			class="nav-cta"
+			href="partners.html">Get
+			involved</a>
+			</div>
+			</nav>
+			</header>
+			<main>
+			<section class="hero">
+			<div class="wrap">
+			<div class="eyebrow">Engineering in action</div>
+			<h1>OUR<br>
+			<span>ROBOT</span>
+			</h1>
+			<p>Explore the ideas and process behind our VEX Robotics
+				work, from understanding the challenge to testing a
+				design.</p>
+			</div>
+			</section>
+			<section class="content">
+			<div class="wrap">
+			<div class="section-head">
+			<div>
+			<div class="eyebrow">How we work</div>
+			<h2 class="title">FROM IDEA<br>
+			TO <span>ROBOT</span>
+			</h2>
+			</div>
+			<p
+			class="intro">Building a robot takes planning, creativity, and
+				iteration. We learn by working through each stage
+				together.</p>
+			</div>
+			<div class="systems">
+			<article class="system">
+			<small>01 / DESIGN</small>
+			<h2>Plan the approach</h2>
+			<p>We start by understanding the challenge, then compare
+				ideas and plan a design that can meet its demands.</p>
+			</article>
+			<article class="system">
+			<small>02 / BUILD</small>
+			<h2>Make it work</h2>
+			<p>Careful construction turns a design into a robot. We
+				make adjustments as we learn more about how each part
+				works together.</p>
+			</article>
+			<article class="system">
+			<small>03 / PROGRAM</small>
+			<h2>Put it in motion</h2>
+			<p>Code gives the robot instructions. Testing helps us
+				refine those instructions and improve how the robot
+				responds.</p>
+			</article>
+			</div>
+			<div class="specs">
+			<div class="spec-visual">ZT</div>
+			<div>
+			<div class="eyebrow">Our process</div>
+			<h2 class="title">LEARN<br>
+			AND <span>IMPROVE</span>
+			</h2>
+			<div class="spec-list">
+			<div class="spec">
+			<span>Focus</span>
+			<span>Engineering challenges</span>
+			</div>
+			<div class="spec">
+			<span>Approach</span>
+			<span>Design and iteration</span>
+			</div>
+			<div class="spec">
+			<span>Skills</span>
+			<span>Building and programming</span>
+			</div>
+			<div class="spec">
+			<span>Teamwork</span>
+			<span>Learning together</span>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</section>
+			</main>
+			<footer>
+			<div class="wrap footer-row">
+			<span>© 2026 ZERO TOLERANCE ROBOTICS. BUILDING, LEARNING,
+				GROWING.</span>
+			<div
+			class="footer-links">
+			<a
+			href="Index.html">Home</a>
+			<a
+			href="team.html">Team</a>
+			<a
+			href="partners.html">Get
+			involved</a>
+			</div>
+			</div>
+			</footer>
+			</body>
+		</html>
