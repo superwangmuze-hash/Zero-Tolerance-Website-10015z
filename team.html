@@ -188,6 +188,96 @@
 					line-height:1.75;
 					margin:0;
 				}
+				.rewards-section {
+					background:#0e0f10;
+				}
+				.rewards-layout {
+					display:grid;
+					grid-template-columns:minmax(250px,.75fr) minmax(0,1.5fr);
+					align-items:start;
+					gap:36px;
+				}
+				.rewards-list {
+					margin:0;
+					padding:0;
+					list-style:none;
+					border-top:1px solid var(--line);
+				}
+				.rewards-list li {
+					padding:18px 0;
+					border-bottom:1px solid var(--line);
+					color:var(--muted);
+					font-size:13px;
+					line-height:1.75;
+				}
+				.rewards-list li::before {
+					content:'—';
+					margin-right:12px;
+					color:var(--gold);
+				}
+				.rewards-gallery {
+					min-width:0;
+				}
+				.gallery-stage {
+					position:relative;
+					display:grid;
+					aspect-ratio:16 / 10;
+					min-height:260px;
+					place-items:center;
+					overflow:hidden;
+					border:1px solid rgba(213,173,99,.35);
+					background:
+						linear-gradient(135deg,rgba(213,173,99,.12),transparent 55%),
+						linear-gradient(180deg,#171819,#0e0f10);
+				}
+				.gallery-placeholder {
+					color:rgba(213,173,99,.7);
+					font:800 clamp(48px,8vw,100px)/1 var(--display);
+					letter-spacing:.12em;
+				}
+				.gallery-caption {
+					margin:12px 0 0;
+					color:var(--muted);
+					font-size:12px;
+					line-height:1.6;
+				}
+				.gallery-controls {
+					display:flex;
+					align-items:center;
+					justify-content:space-between;
+					gap:16px;
+					margin-top:18px;
+				}
+				.gallery-control {
+					display:inline-flex;
+					min-width:90px;
+					min-height:40px;
+					align-items:center;
+					justify-content:center;
+					gap:8px;
+					padding:0 12px;
+					border:1px solid rgba(213,173,99,.55);
+					background:transparent;
+					color:var(--gold);
+					font:700 10px var(--body);
+					letter-spacing:.1em;
+					text-transform:uppercase;
+					cursor:pointer;
+				}
+				.gallery-control:hover {
+					background:var(--gold);
+					color:#111;
+				}
+				.gallery-control:focus-visible {
+					outline:2px solid var(--gold);
+					outline-offset:4px;
+				}
+				.gallery-count {
+					color:var(--white);
+					font-size:11px;
+					font-weight:700;
+					letter-spacing:.12em;
+				}
 				.team-note {
 					margin-top:28px;
 					color:#777;
@@ -235,6 +325,10 @@
 					}
 					.team-grid {
 						grid-template-columns:repeat(2,1fr);
+					}
+					.rewards-layout {
+						grid-template-columns:1fr;
+						gap:28px;
 					}
 					.member-visual {
 						height:180px;
@@ -369,6 +463,60 @@
 				improving with every project.</p>
 			</div>
 			</section>
+			<section class="section rewards-section" id="rewards">
+				<div class="wrap">
+					<div class="section-head">
+						<div>
+							<div class="eyebrow">Our achievements</div>
+							<h2 class="title">OUR PREVIOUS<br><span>REWARDS</span></h2>
+						</div>
+						<p class="intro">
+							A look back at the recognition and milestones
+							earned by our team.
+						</p>
+					</div>
+					<div class="rewards-layout">
+						<ul class="rewards-list" aria-label="Previous rewards">
+							<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+							<li>Ut enim ad minim veniam, quis nostrud exercitation.</li>
+							<li>Duis aute irure dolor in reprehenderit in voluptate.</li>
+						</ul>
+						<div
+							class="rewards-gallery"
+							role="region"
+							aria-label="Previous rewards photo gallery">
+							<div
+								class="gallery-stage"
+								aria-live="polite"
+								aria-atomic="true">
+								<span class="gallery-placeholder">ZT</span>
+							</div>
+							<p class="gallery-caption">
+								Add team reward photos to the gallery.
+							</p>
+							<div class="gallery-controls">
+								<button
+									class="gallery-control"
+									type="button"
+									data-gallery-direction="-1"
+									aria-label="Show previous photo">
+									<span aria-hidden="true">←</span>
+									Previous
+								</button>
+								<span class="gallery-count">1 / 3</span>
+								<button
+									class="gallery-control"
+									type="button"
+									data-gallery-direction="1"
+									aria-label="Show next photo">
+									Next
+									<span aria-hidden="true">→</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			</main>
 			<footer>
 			<div class="wrap footer-row">
@@ -386,5 +534,31 @@
 			</div>
 			</div>
 			</footer>
+			<script>
+				const galleryStage = document.querySelector('.gallery-stage');
+				const galleryCount = document.querySelector('.gallery-count');
+				const galleryCaptions = [
+					'Add team reward photos to the gallery.',
+					'Add another team photo to continue the gallery.',
+					'Add a third team photo to complete the gallery.'
+				];
+				let galleryIndex = 0;
+
+				document.querySelectorAll('[data-gallery-direction]').forEach(button => {
+					button.addEventListener('click', () => {
+						const direction = Number(button.dataset.galleryDirection);
+						galleryIndex = (galleryIndex + direction + galleryCaptions.length)
+							% galleryCaptions.length;
+						galleryCount.textContent =
+							`${galleryIndex + 1} / ${galleryCaptions.length}`;
+						galleryStage.setAttribute(
+							'aria-label',
+							`Photo ${galleryIndex + 1} of ${galleryCaptions.length}`
+						);
+						document.querySelector('.gallery-caption').textContent =
+							galleryCaptions[galleryIndex];
+					});
+				});
+			</script>
 		</body>
 	</html>
