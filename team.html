@@ -75,21 +75,24 @@
 				.links {
 					display:flex;
 					align-items:center;
-					gap:28px;
+					gap:32px;
 				}
 				.links a {
 					color:#d0d0ce;
 					font-size:11px;
 					font-weight:600;
-					letter-spacing:.1em;
+					letter-spacing:.12em;
+					text-transform:uppercase;
+					transition:color .2s;
 				}
 				.links a:hover,.links a[aria-current=page] {
 					color:var(--gold);
 				}
 				.nav-cta {
-					border:1px solid rgba(213,173,99,.65);
-					padding:12px 15px;
-					color:var(--gold)!important;
+					border:1px solid #ffbf24;
+					background:#ffbf24;
+					padding:12px 17px;
+					color:var(--bg)!important;
 				}
 				.eyebrow {
 					display:flex;
@@ -382,15 +385,15 @@
 			<div
 			class="links">
 			<a
-			href="index.html">about</a>
+			href="index.html#about">ABOUT</a>
 			<a
-			href="index.html">robot</a>
+			href="robot.html">ROBOT</a>
 			<a
-			href="index.html"
-			aria-current="page">team</a>
+			href="team.html"
+			aria-current="page">TEAM</a>
 			<a
 			class="nav-cta"
-			href="index.html">get involved</a>
+			href="partners.html">GET INVOLVED</a>
 			</div>
 			</nav>
 			</header>
