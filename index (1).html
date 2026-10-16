@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#090a0b">
+		<meta
+			name="description"
+			content="Meet Zero Tolerance Robotics, a VEX Robotics team focused on engineering, programming, and teamwork.">
+			<title>Zero Tolerance Robotics</title>
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+			rel="stylesheet">
+				<style>
+				:root {
+					--bg:#090a0b;
+					--panel:#111214;
+					--gold:#d5ad63;
+					--white:#f4f3ef;
+					--muted:#999a9b;
+					--line:rgba(255,255,255,.12);
+					--display:'Barlow Condensed',Impact,sans-serif;
+					--body:'DM Sans',sans-serif;
+					scroll-behavior:smooth;
+				}
+				* {
+					box-sizing:border-box;
+				}
+				body {
+					margin:0;
+					background:var(--bg);
+					color:var(--white);
+					font-family:var(--body);
+					-webkit-font-smoothing:antialiased;
+				}
+				a {
+					color:inherit;
+					text-decoration:none;
+				}
+				button {
+					font:inherit;
+				}
+				.wrap {
+					width:min(1240px,calc(100% - 64px));
+					margin:auto;
+				}
+				.eyebrow {
+					display:flex;
+					align-items:center;
+					gap:12px;
+					color:var(--gold);
+					font-size:11px;
+					font-weight:700;
+					letter-spacing:.2em;
+					text-transform:uppercase;
+				}
+				.eyebrow:before {
+					content:'';
+					width:28px;
+					height:1px;
+					background:var(--gold);
+				}
+				header {
+					height:82px;
+					position:absolute;
+					inset:0 0 auto;
+					z-index:5;
+					border-bottom:1px solid rgba(255,255,255,.1);
+				}
+				.nav {
+					height:100%;
+					display:flex;
+					align-items:center;
+					justify-content:space-between;
+				}
+				.brand {
+					display:flex;
+					align-items:center;
+					gap:12px;
+					font-size:12px;
+					font-weight:700;
+					letter-spacing:.14em;
+				}
+				.mark {
+					width:34px;
+					height:34px;
+					border:1px solid var(--gold);
+					display:grid;
+					place-items:center;
+					color:var(--gold);
+					font:800 19px var(--display);
+					transform:skew(-8deg);
+				}
+				.links {
+					display:flex;
+					align-items:center;
+					gap:32px;
+				}
+				.links a {
+					color:#d0d0ce;
+					font-size:11px;
+					font-weight:600;
+					letter-spacing:.12em;
+					text-transform:uppercase;
+					transition:color .2s;
+				}
+				.links a:hover {
+					color:var(--gold);
+				}
+				.nav-cta {
+					border:1px solid rgba(213,173,99,.65);
+					padding:12px 17px;
+					color:var(--gold)!important;
+				}
+				.hero {
+					min-height:740px;
+					height:100svh;
+					max-height:1100px;
+					position:relative;
+					display:flex;
+					align-items:center;
+					overflow:hidden;
+					background:linear-gradient(90deg,rgba(5,6,7,.97) 0%,rgba(5,6,7,.76) 43%,
+						rgba(5,6,7,.12) 100%),linear-gradient(0deg,
+				#090a0b 0%,transparent
+						30%),linear-gradient(135deg,rgba(213,173,99,.12),rgba(255,255,255,.02));
+				}
+				.hero:after {
+					content:'';
+					position:absolute;
+					inset:0;
+					background:linear-gradient(120deg,transparent 58%,rgba(213,173,99,.07));
+					pointer-events:none;
+				}
+				.hero-content {
+					position:relative;
+					z-index:1;
+					padding-top:80px;
+				}
+				.hero .eyebrow {
+					margin-bottom:22px;
+				}
+				.hero h1 {
+					font:900 clamp(76px,13.4vw,190px)/.78 var(--display);
+					letter-spacing:-.025em;
+					margin:0 0 30px;
+					text-transform:uppercase;
+				}
+				.hero h1 span {
+					display:block;
+					color:var(--gold);
+				}
+				.hero p {
+					max-width:455px;
+					color:#c6c5c1;
+					font-size:16px;
+					line-height:1.75;
+					margin:0 0 32px;
+				}
+				.actions {
+					display:flex;
+					gap:12px;
+					flex-wrap:wrap;
+				}
+				.btn {
+					display:inline-flex;
+					min-height:48px;
+					align-items:center;
+					justify-content:center;
+					padding:0 22px;
+					border:1px solid var(--gold);
+					font-size:11px;
+					font-weight:700;
+					letter-spacing:.12em;
+					text-transform:uppercase;
+					transition:background .2s,color .2s,transform .2s;
+				}
+				.btn:hover {
+					transform:translateY(-2px);
+					background:var(--gold);
+					color:#111;
+				}
+				.btn.primary {
+					background:var(--gold);
+					color:#111;
+				}
+				.btn.primary:hover {
+					background:#e8c47e;
+				}
+				.hero-meta {
+					position:absolute;
+					z-index:1;
+					right:32px;
+					bottom:42px;
+					color:#d7d6d0;
+					font-size:10px;
+					letter-spacing:.18em;
+					text-transform:uppercase;
+					writing-mode:vertical-rl;
+				}
+				.scroll-note {
+					position:absolute;
+					z-index:1;
+					bottom:32px;
+					left:50%;
+					display:flex;
+					align-items:center;
+					gap:12px;
+					color:#d7d6d0;
+					font-size:9px;
+					letter-spacing:.18em;
+					text-transform:uppercase;
+					transform:translateX(-50%);
+					animation:scroll-note-float 2s ease-in-out infinite;
+				}
+				.scroll-note:before {
+					content:'';
+					height:28px;
+					width:1px;
+					background:var(--gold);
+				}
+				.scroll-note:after {
+					content:'↓';
+					color:var(--gold);
+					font-size:15px;
+					line-height:1;
+					margin-left:-8px;
+				}
+				@keyframes scroll-note-float {
+					0%,100% {
+						translate:0 0;
+					}
+					50% {
+						translate:0 6px;
+					}
+				}
+				section {
+					scroll-margin-top:30px;
+				}
+				.section {
+					padding:120px 0;
+				}
+				.section-head {
+					display:flex;
+					align-items:end;
+					justify-content:space-between;
+					gap:30px;
+					margin-bottom:54px;
+				}
+				.section-title {
+					font:800 clamp(48px,7vw,88px)/.9 var(--display);
+					letter-spacing:-.02em;
+					text-transform:uppercase;
+					margin:15px 0 0;
+				}
+				.section-title em {
+					font-style:normal;
+					color:var(--gold);
+				}
+				.section-intro {
+					max-width:350px;
+					color:var(--muted);
+					font-size:13px;
+					line-height:1.8;
+					margin:0;
+				}
+				.about {
+					background:#0e0f10;
+				}
+				.about-grid {
+					display:grid;
+					grid-template-columns:1fr 1fr;
+					gap:9%;
+					align-items:center;
+				}
+				.about-visual {
+					min-height:520px;
+					position:relative;
+					background:linear-gradient(180deg,rgba(213,173,99,.12),rgba(255,255,255,
+						.02));
+					border:1px solid rgba(213,173,99,.35);
+					display:flex;
+					align-items:flex-end;
+					padding:26px;
+				}
+				.about-visual::before {
+					content:'ZT';
+					display:flex;
+					align-items:center;
+					justify-content:center;
+					width:100%;
+					height:100%;
+					border:1px solid rgba(255,255,255,.12);
+					font:800 clamp(62px,8vw,120px)/1 var(--display);
+					color:var(--gold);
+					letter-spacing:.08em;
+				}
+				.image-caption {
+					position:absolute;
+					bottom:22px;
+					left:23px;
+					color:#ddd;
+					font-size:9px;
+					letter-spacing:.16em;
+					text-transform:uppercase;
+				}
+				.about-copy .section-title {
+					margin-bottom:28px;
+				}
+				.about-copy>p {
+					max-width:470px;
+					color:#aaa;
+					font-size:14px;
+					line-height:1.9;
+				}
+				.pillars {
+					display:grid;
+					grid-template-columns:1fr 1fr;
+					margin-top:38px;
+					border-top:1px solid var(--line);
+				}
+				.pillar {
+					padding:19px 10px 17px 0;
+					border-bottom:1px solid var(--line);
+				}
+				.pillar strong {
+					display:block;
+					font:700 24px var(--display);
+					text-transform:uppercase;
+				}
+				.pillar span {
+					display:block;
+					color:var(--muted);
+					font-size:11px;
+					margin-top:5px;
+				}
+				.robot-feature {
+					height:520px;
+					position:relative;
+					background:linear-gradient(90deg,rgba(7,8,9,.9),rgba(7,8,9,.18)),linear-gradient(135deg,
+						rgba(213,173,
+				99,.12),transparent 60%);
+					border:1px solid rgba(213,173,99,.25);
+					display:flex;
+					align-items:flex-end;
+				}
+				.robot-feature-content {
+					position:absolute;
+					left:6%;
+					bottom:43px;
+				}
+				.robot-feature h3 {
+					font:800 clamp(43px,7vw,84px)/.9 var(--display);
+					text-transform:uppercase;
+					margin:12px 0;
+				}
+				.robot-feature p {
+					font-size:12px;
+					color:#c3c3c0;
+					max-width:390px;
+					line-height:1.7;
+				}
+				.robot-tag {
+					position:absolute;
+					right:30px;
+					top:30px;
+					border:1px solid rgba(255,255,255,.3);
+					padding:10px 13px;
+					font-size:9px;
+					letter-spacing:.17em;
+					text-transform:uppercase;
+				}
+				.capabilities {
+					display:grid;
+					grid-template-columns:repeat(3,1fr);
+					border-bottom:1px solid var(--line);
+				}
+				.capability {
+					padding:32px 26px 34px 0;
+					border-top:1px solid var(--line);
+				}
+				.capability+.capability {
+					padding-left:25px;
+					border-left:1px solid var(--line);
+				}
+				.capability small {
+					color:var(--gold);
+					font-size:10px;
+					letter-spacing:.15em;
+				}
+				.capability h3 {
+					font:700 29px var(--display);
+					text-transform:uppercase;
+					margin:13px 0 8px;
+				}
+				.capability p {
+					font-size:12px;
+					line-height:1.75;
+					color:var(--muted);
+					max-width:300px;
+					margin:0;
+				}
+				.team {
+					background:#0e0f10;
+				}
+				.team-grid {
+					display:grid;
+					grid-template-columns:repeat(3,1fr);
+					gap:18px;
+				}
+				.member {
+					position:relative;
+					background:#171819;
+					overflow:hidden;
+				}
+				.member-photo {
+					height:360px;
+					background:linear-gradient(180deg,rgba(213,173,99,.12),rgba(255,255,255,
+						.02));
+					border-bottom:1px solid rgba(213,173,99,.45);
+					display:grid;
+					place-items:center;
+					color:var(--gold);
+					font:800 clamp(38px,4vw,72px)/1 var(--display);
+					letter-spacing:.12em;
+				}
+				.member:hover .member-photo {
+					background:linear-gradient(180deg,rgba(213,173,99,.2),rgba(255,255,255,
+						.04));
+				}
+				.member-info {
+					padding:21px 22px 23px;
+				}
+				.member-role {
+					color:var(--gold);
+					font-size:9px;
+					letter-spacing:.17em;
+					text-transform:uppercase;
+				}
+				.member h3 {
+					font:700 31px var(--display);
+					text-transform:uppercase;
+					margin:6px 0;
+				}
+				.member p {
+					color:var(--muted);
+					font-size:11px;
+					line-height:1.7;
+					margin:0;
+				}
+				.impact {
+					background:var(--gold);
+					color:#111;
+				}
+				.impact .eyebrow {
+					color:#20190d;
+				}
+				.impact .eyebrow:before {
+					background:#20190d;
+				}
+				.impact .section-title em {
+					color:#fff;
+				}
+				.stats {
+					display:grid;
+					grid-template-columns:repeat(4,1fr);
+					margin-top:54px;
+					border-top:1px solid rgba(0,0,0,.25);
+				}
+				.stat {
+					padding:29px 12px 8px 0;
+				}
+				.stat+.stat {
+					padding-left:24px;
+					border-left:1px solid rgba(0,0,0,.25);
+				}
+				.stat strong {
+					display:block;
+					font:800 clamp(53px,7vw,88px)/.9 var(--display);
+					letter-spacing:-.03em;
+				}
+				.stat span {
+					display:block;
+					margin-top:14px;
+					font-size:10px;
+					font-weight:700;
+					letter-spacing:.13em;
+					text-transform:uppercase;
+				}
+				.impact-note {
+					margin:35px 0 0;
+					color:rgba(0,0,0,.62);
+					font-size:10px;
+				}
+				.sponsors {
+					background:#0e0f10;
+				}
+				.sponsor-grid {
+					display:grid;
+					grid-template-columns:repeat(4,1fr);
+					border-top:1px solid var(--line);
+					border-left:1px solid var(--line);
+				}
+				.sponsor {
+					height:130px;
+					display:grid;
+					place-items:center;
+					border-right:1px solid var(--line);
+					border-bottom:1px solid var(--line);
+					color:#777;
+					font:700 22px var(--display);
+					letter-spacing:.09em;
+					text-transform:uppercase;
+					transition:color .2s,background .2s;
+				}
+				.sponsor:hover {
+					color:var(--gold);
+					background:#141516;
+				}
+				.sponsor span {
+					font:500 8px var(--body);
+					letter-spacing:.18em;
+					margin-left:5px;
+				}
+				.sponsor-cta {
+					display:flex;
+					align-items:center;
+					justify-content:space-between;
+					gap:30px;
+					padding:42px 0 0;
+				}
+				.sponsor-cta p {
+					color:var(--muted);
+					font-size:13px;
+					line-height:1.8;
+					max-width:510px;
+				}
+				.sponsor-cta a:not(.btn) {
+					color:var(--gold);
+					border-bottom:1px solid rgba(213,173,99,.5);
+				}
+				footer {
+					border-top:1px solid var(--line);
+					padding:24px 0;
+					color:#777;
+					font-size:10px;
+					letter-spacing:.08em;
+				}
+				.footer-row {
+					display:flex;
+					align-items:center;
+					justify-content:space-between;
+					gap:20px;
+				}
+				.footer-links {
+					display:flex;
+					gap:20px;
+				}
+				.footer-links a:hover {
+					color:var(--gold);
+				}
+				.reveal {
+					opacity:0;
+					transform:translateY(22px);
+					transition:opacity .7s ease,transform .7s ease;
+				}
+				.reveal.visible {
+					opacity:1;
+					transform:none;
+				}
+				@media(max-width:800px) {
+					.wrap {
+						width:min(100% - 40px,600px);
+					}
+					header {
+						height:70px;
+					}
+					.links {
+						gap:16px;
+					}
+					.links a {
+						font-size:9px;
+					}
+					.hero {
+						min-height:700px;
+						height:92svh;
+						background-position:60% center;
+					}
+					.hero h1 {
+						font-size:clamp(70px,15vw,120px);
+					}
+					.hero p {
+						font-size:14px;
+					}
+					.section {
+						padding:85px 0;
+					}
+					.about-grid {
+						grid-template-columns:1fr;
+						gap:38px;
+					}
+					.about-image {
+						min-height:390px;
+					}
+					.section-head {
+						align-items:start;
+						flex-direction:column;
+						margin-bottom:38px;
+					}
+					.section-intro {
+						max-width:500px;
+					}
+					.team-grid {
+						grid-template-columns:repeat(2,1fr);
+					}
+					.member-photo {
+						height:300px;
+					}
+					.stats {
+						grid-template-columns:repeat(2,1fr);
+					}
+					.stat:nth-child(3) {
+						border-left:0;
+						padding-left:0;
+					}
+					.stat:nth-child(n+3) {
+						border-top:1px solid rgba(0,0,0,.25);
+					}
+					.sponsor-grid {
+						grid-template-columns:repeat(2,1fr);
+					}
+					.sponsor-cta {
+						align-items:start;
+						flex-direction:column;
+					}
+				}
+				@media(max-width:520px) {
+					.wrap {
+						width:calc(100% - 24px);
+					}
+					.brand {
+						font-size:9px;
+						gap:7px;
+					}
+					.mark {
+						width:28px;
+						height:28px;
+					}
+					.links {
+						gap:8px;
+					}
+					.links a {
+						font-size:7px;
+						letter-spacing:.06em;
+					}
+					.links .nav-cta {
+						padding:8px 6px;
+					}
+					.hero {
+						min-height:660px;
+						background-position:58% center;
+					}
+					.hero h1 {
+						font-size:clamp(64px,16vw,88px);
+					}
+					.hero .eyebrow {
+						font-size:9px;
+					}
+					.hero p {
+						max-width:330px;
+					}
+					.scroll-note {
+						left:50%;
+						bottom:18px;
+					}
+					.hero-meta {
+						right:17px;
+						bottom:24px;
+					}
+					.section {
+						padding:72px 0;
+					}
+					.section-title {
+						font-size:58px;
+					}
+					.about-image {
+						min-height:320px;
+					}
+					.capabilities {
+						grid-template-columns:1fr;
+					}
+					.capability,.capability+.capability {
+						padding:23px 0;
+						border-left:0;
+					}
+					.team-grid {
+						grid-template-columns:1fr;
+						gap:14px;
+					}
+					.member-photo {
+						height:390px;
+					}
+					.stat strong {
+						font-size:62px;
+					}
+					.stat span {
+						font-size:9px;
+					}
+					.sponsor {
+						height:100px;
+						font-size:19px;
+					}
+					.footer-row {
+						align-items:flex-start;
+						flex-direction:column;
+					}
+					.footer-links {
+						flex-wrap:wrap;
+					}
+				}
+				@media(prefers-reduced-motion:reduce) {
+					*,*::before,*::after {
+						scroll-behavior:auto!important;
+						animation-duration:.01ms!important;
+						transition-duration:.01ms!important;
+					}
+					.scroll-note {
+						animation:none;
+					}
+					.reveal {
+						opacity:1;
+						transform:none;
+					}
+				}
+</style>
+			</head>
+			<body>
+			<header>
+			<nav class="nav wrap" aria-label="Main navigation">
+			<a class="brand" href="index.html">
+			<span class="mark">ZT</span>
+			<span>ZERO TOLERANCE<br>
+			<small style="font-size:8px;color:#999;letter-spacing:.2em">VEX ROBOTICS</small>
+			</span>
+			</a>
+			<div
+			class="links">
+			<a
+			href="#about">ABOUT</a>
+			<a
+			href="robot.html">ROBOT</a>
+			<a
+			href="team.html">TEAM</a>
+			<a
+			class="nav-cta"
+			href="partners.html">SPONSORS</a>
+			</div>
+			</nav>
+			</header>
+			<main>
+			<section class="hero" id="top">
+			<div class="wrap hero-content">
+			<div class="eyebrow">VEX Robotics · Student team</div>
+			<h1>ZERO<span>TOLERANCE</span>
+			</h1>
+			<p>We bring ideas to life through robotics,
+				problem-solving, and teamwork. Get to know our team and
+				see what we are working on.</p>
+			<div
+			class="actions">
+			<a
+			class="btn primary"
+			href="#team">Meet
+			the
+			team
+			<span
+			aria-hidden="true">&nbsp;↗</span>
+			</a>
+			<a
+			class="btn"
+			href="#robot">Explore
+			our
+			robot
+			<span
+			aria-hidden="true">&nbsp;↗</span>
+			</a>
+			</div>
+			</div>
+			<div class="hero-meta">Design · Build · Compete</div>
+			<a class="scroll-note" href="#about">Discover our team</a>
+			</section>
+			<section class="section about" id="about">
+			<div class="wrap about-grid">
+			<div class="about-visual">
+			<div class="image-caption">Zero Tolerance Robotics</div>
+			</div>
+			<div class="about-copy reveal">
+			<div class="eyebrow">Our team</div>
+			<h2 class="section-title">WHO<br>
+			<em>WE ARE</em>
+			</h2>
+			<p>Zero Tolerance is a VEX Robotics team where students
+				explore engineering through hands-on projects. We work
+				together to turn ideas into designs, build and program
+				robots, and learn from each challenge.</p>
+			<p>Robotics brings creativity and problem-solving
+				together. Along the way, we share ideas, test our work,
+				and keep improving as a team.</p>
+			<div class="pillars">
+			<div class="pillar">
+			<strong>01 / Design</strong>
+			<span>Plan with purpose</span>
+			</div>
+			<div class="pillar">
+			<strong>02 / Build</strong>
+			<span>Make ideas real</span>
+			</div>
+			<div class="pillar">
+			<strong>03 / Collaborate</strong>
+			<span>Learn from each other</span>
+			</div>
+			<div class="pillar">
+			<strong>04 / Improve</strong>
+			<span>Try, test, refine</span>
+			</div>
+			</div>
+			</div>
+			</div>
+			</section>
+			<section class="section" id="robot">
+			<div class="wrap">
+			<div class="section-head reveal">
+			<div>
+			<div class="eyebrow">Engineering in action</div>
+			<h2 class="section-title">BUILT TO<br>
+			<em>COMPETE</em>
+			</h2>
+			</div>
+			<p
+			class="section-intro">A robotics project takes more than a good idea. We
+				bring design, programming, and careful testing together
+				to prepare for each new challenge.</p>
+			</div>
+			<div class="robot-feature reveal">
+			<div class="robot-tag">VEX Robotics</div>
+			<div class="robot-feature-content">
+			<div class="eyebrow">From concept to competition</div>
+			<h3>OUR<br>
+			ROBOT</h3>
+			<p>Every robot starts with a challenge. We plan, build,
+				and refine our designs as we learn what works and find
+				new ways to improve.</p>
+			</div>
+			</div>
+			<div class="capabilities reveal">
+			<article class="capability">
+			<small>01 — DESIGN</small>
+			<h3>Thoughtful design</h3>
+			<p>We break down each challenge and explore ideas before
+				turning a plan into a working design.</p>
+			</article>
+			<article class="capability">
+			<small>02 — PROGRAMMING</small>
+			<h3>Clear code</h3>
+			<p>Programming helps our robot respond to its environment
+				and carry out the tasks we plan.</p>
+			</article>
+			<article class="capability">
+			<small>03 — TESTING</small>
+			<h3>Steady progress</h3>
+			<p>Testing helps us spot problems, learn from the results,
+				and make our next version better.</p>
+			</article>
+			</div>
+			</div>
+			</section>
+			<section class="section team" id="team">
+			<div class="wrap">
+			<div class="section-head reveal">
+			<div>
+			<div class="eyebrow">Meet the team</div>
+			<h2 class="section-title">MEET THE<br>
+			<em>TEAM</em>
+			</h2>
+			</div>
+			<p
+			class="section-intro">Robotics is a team effort. Together, we share ideas,
+				solve problems, and bring our projects from the
+				workbench to competition.</p>
+			</div>
+			<div class="team-grid">
+			<article class="member reveal">
+			<div class="member-photo">PG</div>
+			<div class="member-info">
+			<div class="member-role">Team member</div>
+			<h3>Pranjal Gupta</h3>
+			<p>Working together to take on new robotics challenges.</p>
+			</div>
+			</article>
+			<article class="member reveal">
+			<div class="member-photo">BC</div>
+			<div class="member-info">
+			<div class="member-role">Team member</div>
+			<h3>Benjamin Casimir</h3>
+			<p>Working together to take on new robotics challenges.</p>
+			</div>
+			</article>
+			<article class="member reveal">
+			<div class="member-photo">EW</div>
+			<div class="member-info">
+			<div class="member-role">Team member</div>
+			<h3>Ethan Wang</h3>
+			<p>Working together to take on new robotics challenges.</p>
+			</div>
+			</article>
+			<article class="member reveal">
+			<div class="member-photo">EZ</div>
+			<div class="member-info">
+			<div class="member-role">Team member</div>
+			<h3>Emily Zhang</h3>
+			<p>Working together to take on new robotics challenges.</p>
+			</div>
+			</article>
+			<article class="member reveal">
+			<div class="member-photo">MW</div>
+			<div class="member-info">
+			<div class="member-role">Team member</div>
+			<h3>Mark Wang</h3>
+			<p>Working together to take on new robotics challenges.</p>
+			</div>
+			</article>
+			</div>
+			</div>
+			</section>
+			<section class="section impact" id="impact">
+			<div class="wrap">
+			<div class="eyebrow">Our community</div>
+			<h2 class="section-title">OUR <em>REACH</em>
+			</h2>
+			<div class="stats">
+			<div
+			class="stat">
+			<strong
+			data-count="250"
+			data-suffix="+">250+</strong>
+			<span>People
+			reached</span>
+			</div>
+			<div
+			class="stat">
+			<strong
+			data-count="120"
+			data-suffix="+">120+</strong>
+			<span>Students
+			engaged</span>
+			</div>
+			<div class="stat">
+			<strong data-count="12">12</strong>
+			<span>Events attended</span>
+			</div>
+			<div class="stat">
+			<strong data-count="8">8</strong>
+			<span>Projects completed</span>
+			</div>
+			</div>
+			<p
+			class="impact-note">We grow our impact by sharing robotics, learning
+				together, and taking on new challenges.</p>
+			</div>
+			</section>
+			<section class="section sponsors" id="sponsors">
+			<div class="wrap">
+			<div class="section-head reveal">
+			<div>
+			<div class="eyebrow">Support student robotics</div>
+			<h2 class="section-title">GET<br>
+			<em>INVOLVED</em>
+			</h2>
+			</div>
+			<p
+			class="section-intro">Community support helps student teams learn, build, and
+				take part in robotics. We appreciate everyone who
+				encourages young engineers and makers.</p>
+			</div>
+			<div class="sponsor-grid reveal" aria-label="Ways to support our team">
+			<div class="sponsor">Share expertise</div>
+			<div class="sponsor">Offer mentorship</div>
+			<div class="sponsor">Support materials</div>
+			<div class="sponsor">Encourage students</div>
+			</div>
+			<div class="sponsor-cta reveal">
+			<div>
+			<div class="eyebrow">Be part of the journey</div>
+			<p>Interested in supporting our work? Learn more about the
+				people behind the projects and the challenges we take
+				on.</p>
+			</div>
+			<a class="btn primary" href="#team">Meet the team ↗</a>
+			</div>
+			</div>
+			</section>
+			</main>
+			<footer>
+			<div class="wrap footer-row">
+			<span>© 2026 ZERO TOLERANCE ROBOTICS. BUILDING, LEARNING,
+				GROWING.</span>
+			<div
+			class="footer-links">
+			<a
+			href="#about">About</a>
+			<a
+			href="#team">Team</a>
+			<a
+			href="#sponsors">Get
+			involved</a>
+			<a
+			href="#top">Back
+			to
+			top</a>
+			</div>
+			</div>
+			</footer>
+			<script>
+			// This page uses a lightweight browser feature called IntersectionObserver.
+			// The idea is simple: when an element scrolls into view, we trigger a visual change.
+			// In this case, any element with the class .reveal gets the .visible class,
+			// which makes the section fade in or slide in smoothly with CSS.
+			const observer = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) return;
+
+					// Once the element enters the viewport, mark it as visible.
+					entry.target.classList.add('visible');
+
+					// Stop watching this element after it has been activated.
+					observer.unobserve(entry.target);
+				});
+			}, { threshold: .15 });
+
+			// Start observing every section/card that should animate on scroll.
+			document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+			// The stat counters below are also animated, but in a different way.
+			// We want the number to count up when the user scrolls down and reaches that block.
+			// This creates a more polished, “live data” feeling without needing a library.
+			const countObserver = new IntersectionObserver(entries => {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) return;
+
+					const el = entry.target;
+					const end = Number(el.dataset.count);
+					const suffix = el.dataset.suffix || '';
+					const start = performance.now();
+					const duration = 1300;
+
+					// The animation loop updates the display frame by frame.
+					// Using requestAnimationFrame keeps the animation smooth and synced with the browser.
+					const animate = now => {
+						const progress = Math.min((now - start) / duration, 1);
+						const eased = 1 - Math.pow(1 - progress, 3);
+						el.textContent = `${Math.round(end * eased)}${suffix}`;
+
+						if (progress < 1) requestAnimationFrame(animate);
+					};
+
+					// Accessibility check: if the user prefers reduced motion, skip the animation.
+					// We still show the final number immediately instead of animating it.
+					if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+						el.textContent = `${end}${suffix}`;
+					} else {
+						el.textContent = `0${suffix}`;
+						requestAnimationFrame(animate);
+					}
+
+					// Once triggered, we do not need to keep watching this counter.
+					countObserver.unobserve(el);
+				});
+			}, { threshold: 0.4 });
+
+			// Watch every element that has a data-count attribute, such as 250+, 120+, etc.
+			document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+			</script>
+			</body>
+		</html>
